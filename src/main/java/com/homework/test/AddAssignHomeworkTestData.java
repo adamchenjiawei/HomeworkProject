@@ -19,6 +19,7 @@ public class AddAssignHomeworkTestData {
 		for (int i = 0; i < 51; i++) {
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 			String date = df.format(new Date());
+			System.out.println("ceshi");
 //			AssignHomeworkMapper.add_data(1,6, "作业"+i, "抄书"+(i*10)+"遍", 1, date, date, date);
 		}
 	}
