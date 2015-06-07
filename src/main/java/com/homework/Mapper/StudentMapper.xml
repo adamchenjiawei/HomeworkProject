@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homework.dao.Students_DAO">
+	<resultMap type="com.homework.model.Student" id="student">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="qq" property="qq" />
+		<result column="dormitory" property="dormitory" />
+		<result column="age" property="age" />
+		<result column="sex" property="sex" />
+		<result column="e_mail" property="e_mail" />
+		<result column="phone" property="phone" />
+		<result column="class_id" property="class_id" />
+		<result column="student_number" property="student_number" />
+		<result column="hashed_password" property="hashed_password" />
+		<result column="salt" property="salt" />
+		<result column="created_at" property="created_at" />
+		<result column="updated_at" property="updated_at" />
+	</resultMap>
+
+	<select id="login" resultType="com.homework.model.User">
+		select
+		id,
+		student_number as
+		account,
+		e_mail as e_mail,
+		name as name,
+		phone as phone,
+		'Student' as
+		role
+		from students
+		where
+		student_number = #{student_number}
+		and
+		hashed_password = #{hashed_password}
+	</select>
+
+	<select id="query_students" resultMap="student">
+		select * from students
+		where
+		class_id = #{the_class_id} LIMIT
+		${page_m},20
+	</select>
+
+	<select id="query_students_count" resultType="Integer">
+		select count(*)
+		from students where
+		class_id = ${the_class_id}
+	</select>
+
+	<delete id="delete_student">
+		delete from students where id = #{id}
+	</delete>
+
+	<select id="search_students" resultMap="student">
+		select * from students
+		where
+		class_id = #{the_class_id} and name like '%${name}%' LIMIT
+		${page_m},20
+	</select>
+
+	<select id="search_students_count" resultType="Integer">
+		select count(*)
+		from students where
+		class_id = ${the_class_id} and name like
+		'%${name}%'
+	</select>
+
+	<insert id="add_student">
+		insert
+		students(name,age,sex,e_mail,phone,qq,dormitory,class_id,student_number,hashed_password,salt,created_at,updated_at)
+		values(#{name},${age},#{sex},#{e_mail},#{phone},#{qq},#{dormitory},#{class_id},#{student_number},#{hashpassword},#{salt},#{created_at},#{updated_at})
+
+	</insert>
+
+	<select id="student_class_id" resultType="Integer">
+		select class_id from
+		students where id = #{id}
+	</select>
+
+	<select id="query_student" resultType="com.homework.model.Student">
+		select * from students
+		where id = ${id}
+	</select>
+
+	<select id="query_students_one" resultMap="student">
+		select * from students
+		where
+		id = #{id}
+	</select>
+	
+	<update id="update_student" parameterType="com.homework.model.Student">
+		update students set
+		name=#{name},
+		age=#{age},
+		sex=#{sex},
+		e_mail=#{e_mail},
+		phone=#{phone},
+		qq=#{qq},
+		dormitory=#{dormitory},
+		class_id=#{class_id},
+		student_number=#{student_number},
+		hashed_password=#{hashpassword},
+		updated_at=#{updated_at}
+		where id=#{id}
+	</update>
+	
+
+	<select id="getStudentNO" resultMap="student">
+		select * from students
+		where
+		id not in (
+		select student_id from assignment
+		where
+		assign_home_id = (
+		select id from assign_homework
+		where
+		title = #{homeWorkName_NO}
+		and
+		teacher_id = (
+		select id from teachers
+		where
+		login_user = #{account}
+		)
+		and
+		the_class_id = (
+		select id from the_class
+		where
+		the_class =
+		#{className_NO}
+		)
+		)
+		)
+	</select>
+
+	<select id="getAssignMent" resultType="com.homework.model.Assignment">
+		select * from assignment
+		where
+		assign_home_id = (select id from assign_homework where title =
+		#{homeWorkName} and
+		teacher_id = (select id from teachers where
+		login_user = #{account})
+		and the_class_id = (select id from the_class
+		where the_class =
+		#{className}))
+	</select>
+
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<mappers>
+		<mapper resource="com/homework/Mapper/ClassMapper.xml" />
+		<mapper resource="com/homework/Mapper/ClassToTeacherMapper.xml" />
+		<mapper resource="com/homework/Mapper/StudentMapper.xml" />
+		<mapper resource="com/homework/Mapper/TeacherMapper.xml" />
+		<mapper resource="com/homework/Mapper/AdminMapper.xml" />
+		<mapper resource="com/homework/Mapper/AssignmentMapper.xml" />
+		<mapper resource="com/homework/Mapper/FilePathMapper.xml" />
+		<mapper resource="com/homework/Mapper/AssignHomeworkMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../../css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="../../css/bootstrap.css.map" rel="stylesheet"
+	type="text/css">
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<link href="../../css/admin/register.css" rel="stylesheet"
+	type="text/css">
+<script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+<script type="text/javascript" src="../../javascript/jquery.validate.js"></script>
+<script type="text/javascript" src="../../javascript/jquery.metadata.js"></script>
+<title>添加教师信息</title>
+</head>
+<body>
+	<br>
+	<br>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<h2 class="text-center">添加教师信息</h2>
+				<form method="post"
+					action="/ElectronicHomeworkSubmissionSystem/get_TeacherAdd"
+					class="zcform">
+					<table>
+						<tbody>
+							<tr>
+								<td>
+
+
+									<p class="clearfix">
+										<label class="one">姓名：</label> <input name="name"
+											id="telphone" class="required" placeholder="请输入姓名" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">性别：</label> <input name="age" id="telphone"
+											class="required" placeholder="请输入性别" />
+
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<p class="clearfix">
+										<label class="one">年龄：</label> <input name="sex" type="text"
+											id="telphone" class="required" placeholder="请输入年龄" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">手机号码：</label> <input name="phone"
+											type="text" id="telphone" class="required"
+											placeholder="请输入手机号码" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one" for="agent">QQ号：</label> <input name="qq"
+											type="text" id="telphone" class="required"
+											placeholder="请输入QQ号" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">邮箱：</label> <input id="telphone"
+											name="e_mail" class="required" placeholder="请输入邮箱" />
+									</p>
+								</td>
+							</tr>
+
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">登录名：</label> <input id="telphone"
+											name="login_user" class="required" placeholder="请输入登录名" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">办公室：</label> <input id="telphone"
+											name="office" class="required" placeholder="请输入办公室" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">密码：</label> <input id="telphone"
+											name="hashpassword" class="required" placeholder="请输入密码" />
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<BR>
+					<p>
+						<input class="submit" type="submit" value="添加教师信息" />
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.new_li
+{
+	list-style-type: none;
+	border: 1px solid black;
+}
+.homework_list
+{
+    padding: 5px;
+}
+.list_title
+{
+	margin-bottom: 18px;
+	text-align: center;
+}
+.editor
+{
+	font-size: 1.3em;
+    margin-left: 45px;
+}
+.teacher
+{
+     margin-left: 15%;
+     font-size: 0.8em;
+     position: relative;
+     top: 5px;
+     float:left;
+}
+.time
+{
+	float: right;
+}
+.jPag-pages
+{
+	width: 100%;
+}
+#demo
+{
+}

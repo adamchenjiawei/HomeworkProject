@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/context 
+          http://www.springframework.org/schema/context/spring-context-2.5.xsd
+          http://www.springframework.org/schema/tx 
+          http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<context:property-placeholder
+		location="classpath*:com/homework/properties/spring-jdbc.properties" />
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc_driverClassName}">
+		</property>
+		<property name="url" value="${jdbc_url}">
+		</property>
+		<property name="username" value="${jdbc_username}"></property>
+		<property name="password" value="${jdbc_password}"></property>
+	</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation"
+			value="classpath:com/homework/properties/configuration.xml"></property>
+	</bean>
+
+	<bean id="StudentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.Students_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="TeacherMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.Teachers_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+
+	<bean id="AdminMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.Admin_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+		<bean id="TheClassMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.Class_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+	    <bean id="FileMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.FilePath_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+
+		<bean id="AssignHomeworkMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.AssignHomework_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+		<bean id="AssignmentMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.homework.dao.Assignment_DAO"></property>
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	
+
+	<bean id="LoginService" class="com.homework.service.Impl.LoginServiceImpl">
+		<property name="student" ref="StudentMapper"></property>
+		<property name="teacher" ref="TeacherMapper"></property>
+		<property name="admin" ref="AdminMapper"></property>
+	</bean>
+
+
+	<bean id="AssignHomeworkService" class="com.homework.service.Impl.AssignHomeworkServiceImpl">
+		<property name="assign_homework" ref="AssignHomeworkMapper"></property>
+		<property name="teacher" ref="TeacherMapper"></property>
+		<property name="student" ref="StudentMapper"></property>
+		<property name="filePathDao" ref="FileMapper"></property>
+	</bean>
+
+
+	<bean id="TheClassService" class="com.homework.service.Impl.TheClassServiceImpl">
+		<property name="the_class" ref="TheClassMapper"></property>
+	</bean>
+
+	<bean id="StudentService" class="com.homework.service.Impl.StudentServiceImpl">
+		<property name="the_class" ref="TheClassMapper"></property>
+		<property name="sutdent" ref="StudentMapper"></property>
+		<property name="teacher" ref="TeacherMapper"></property>
+		<property name="homework" ref="AssignHomeworkMapper"></property>
+	    <property name="assign" ref="AssignmentMapper"></property>
+	</bean>
+	
+	<bean id="FileService" class="com.homework.service.Impl.FileServiceImpl">
+		<property name="filePathDao" ref="FileMapper"></property>
+	</bean>
+	
+	<bean id="TeacherService" class="com.homework.service.Impl.TeacherServiceImpl">
+		<property name="the_classDao" ref="TheClassMapper"></property>
+		<property name="teacherDao" ref="TeacherMapper"></property>
+	</bean>
+
+</beans>

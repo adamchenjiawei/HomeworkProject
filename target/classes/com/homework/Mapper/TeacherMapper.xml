@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homework.dao.Teachers_DAO">
+	<resultMap type="com.homework.model.Teacher" id="teacher">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="qq" property="qq" />
+		<result column="dormitory" property="dormitory" />
+		<result column="age" property="age" />
+		<result column="sex" property="sex" />
+		<result column="e_mail" property="e_mail" />
+		<result column="phone" property="phone" />
+		<result column="office" property="office" />
+		<result column="login_user" property="login_user" />
+		<result column="hashed_password" property="hashed_password" />
+		<result column="salt" property="salt" />
+		<result column="created_at" property="created_at" />
+		<result column="updated_at" property="updated_at" />
+	</resultMap>
+
+	<select id="login" resultType="com.homework.model.User">
+		select
+		id,
+		login_user as account,
+		e_mail as e_mail,
+		name as name,
+		phone as phone,
+		'Teacher' as role
+		from
+		teachers
+		where
+		login_user = #{login_user}
+		and
+		hashed_password =
+		#{hashed_password}
+	</select>
+
+	<select id="teacher_name" resultType="String">
+		select name from teachers
+		where id = #{id}
+	</select>
+
+	<select id="query_teacher" resultType="com.homework.model.Teacher">
+		select * from teachers
+		LIMIT ${page_start},20
+	</select>
+
+	<select id="getTeacherCount" resultType="Integer">
+		select count(*) from
+		teachers
+	</select>
+
+	<insert id="add_teacher">
+		insert
+		teachers(name,age,sex,e_mail,phone,qq,office,login_user,hashed_password,salt,created_at,updated_at)
+		values(#{name},${age},#{sex},#{e_mail},#{phone},#{qq},#{office},#{login_user},#{hashpassword},#{salt},#{created_at},#{updated_at})
+	</insert>
+
+	<delete id="delete_teacher">
+		delete from teachers where id = #{id}
+	</delete>
+
+	<select id="search_teacher_count" resultType="Integer">
+		select count(*)
+		from teachers where name like '%${name}%'
+	</select>
+	<select id="search_teachers" resultMap="teacher">
+		select * from teachers
+		where name like '%${name}%' LIMIT ${page_m},20
+	</select>
+
+	<select id="query_teacher_one" resultMap="teacher">
+		select * from teachers
+		where id = #{id}
+	</select>
+	<update id="update_teachers" parameterType="com.homework.model.Teacher">
+		update teachers set
+		name=#{name},
+		age=#{age},
+		sex=#{sex},
+		e_mail=#{e_mail},
+		phone=#{phone},
+		qq=#{qq},
+		office=#{office},
+		login_user=#{login_user},
+		hashed_password=#{hashed_password},
+		updated_at=#{updated_at}
+		where
+		id=#{id}
+	</update>
+	
+	<select id="query_teacher_info" resultMap="teacher">
+	  select * from teachers where id = #{id}
+	</select>
+
+</mapper>

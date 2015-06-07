@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../../css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="../../css/bootstrap.css.map" rel="stylesheet"
+	type="text/css">
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<link href="../../css/admin/register.css" rel="stylesheet"
+	type="text/css">
+<style type="text/css">
+td {
+	float: right;
+	margin-right: 20px;
+}
+</style>
+<script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+<script type="text/javascript" src="../../javascript/jquery.validate.js"></script>
+<script type="text/javascript" src="../../javascript/jquery.metadata.js"></script>
+
+<title>添加学生信息</title>
+</head>
+<body>
+	<br>
+	<br>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<h2 class="text-center">添加学生信息</h2>
+				<form class="zcform" method="post"
+					action="/ElectronicHomeworkSubmissionSystem/add_student">
+					<table>
+						<tbody>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">性别：</label> <input id="telphone" name="sex"
+											class="required" placeholder="请输入性别" />
+
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">姓名：</label> <input id="telphone"
+											name="name" class="required" placeholder="请输入姓名" />
+									</p>
+								</td>
+
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">年龄：</label> <input id="telphone" name="age"
+											type="text" class="required" placeholder="请输入年龄" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">手机号码：</label> <input id="telphone"
+											name="phone" type="text" class="required"
+											placeholder="请输入手机号码" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one" for="agent">QQ号：</label> <input
+											id="telphone" name="qq" type="text" class="required"
+											placeholder="请输入QQ号" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">邮箱：</label> <input id="telphone"
+											name="e_mail" class="required" placeholder="请输入邮箱" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">学号：</label> <input id="telphone"
+											name="student_number" class="required" placeholder="请输入学号" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">登录密码：</label> <input id="telphone"
+											name="hashpassword" class="required" value
+											placeholder="请输入登录密码" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">学生寝室：</label> <input id="telphone"
+											name="dormitory" class="required" value placeholder="请输入学生寝室" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<span style="font-size: 20px; color: #000;">班级：</span><select
+											id="the_class" name="the_class"
+											style="width: 300px; height: 45px; text-align: center;"></select>
+									</p>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+					<BR>
+
+					<p>
+						<input class="submit" type="submit" value="添加学生信息" />
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"
+		src="../../javascript/admin/student/add_student.js"></script>
+</body>
+</html>

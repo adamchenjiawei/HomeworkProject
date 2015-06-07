@@ -1,0 +1,83 @@
+#top
+{
+	margin: 10px 20px 0px 20px;
+	border-bottom: 1px dotted black;
+	padding-bottom: 20px;
+}
+
+.title
+{
+	font-size: 2.2em;
+	text-align: center;
+	margin-bottom: 10px;
+    position: relative;
+    top: -22px;
+    width: 520px;
+    left: 23%;
+}
+
+.teacher
+{
+	margin-left: 20px;
+	font-size: 0.7em;
+}
+
+.content
+{
+	text-indent: 2em;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.time
+{
+	text-align: right;
+	position: relative;
+	top: 8px;
+}
+h1
+{
+	text-align: center;
+	margin-bottom: 20px;
+	
+}
+#homeworks
+{
+	border-bottom: 1px dotted black; 
+	margin: 0px 20px 0px 20px;
+}
+.select_type
+{
+    margin: 40px 0px 20px 115px;
+    	
+}
+#upload_file
+{
+    margin: 20px;
+    float: right;
+}
+.text_homework
+{
+	width: 80%;
+	height: 130px;
+    margin: 30px 20px 20px 10px;	
+	
+}
+.upload_file_text
+{
+  	margin: 30px 30px 0px 0px;
+    float: right;
+}
+#submit_button
+{
+	width: 50%;
+	
+}
+.col-sm-2, .control-label
+{
+	  position: relative;
+      top: 40px;
+      left: 120px;
+      width: 115px;
+}
+

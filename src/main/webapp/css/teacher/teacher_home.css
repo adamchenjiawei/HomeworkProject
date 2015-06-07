@@ -1,0 +1,87 @@
+.portrait
+{
+	width: 200px;
+	height: 200px;
+}
+.user_info
+{
+   position: absolute;
+   list-style-type:none;
+   top:30px;
+   left:220px;
+}
+.user_infos
+{
+	width: 35%;
+	margin-left: 4%;
+}
+
+li
+{
+	margin-bottom: 20px;
+	font-size: 1.2em;
+}
+
+.statistics
+{
+	float: left;
+	border: 1px solid black;
+	width: 200px;
+	height:200px;
+	top: 25px;
+	position: absolute;
+	left:66%;
+}
+
+
+#content
+{
+	border-top: 1px soild black;
+}
+.work_title
+{
+	text-align: center;
+}
+.work_list
+{
+    list-style-type:none;
+    float: left;	
+}
+font
+{
+	line-height: 1.8;
+	font-size: 0.9em;
+	margin-left: 15px;
+}
+
+
+.w_list:link
+{
+	text-decoration:none;   /* 指正常的未被访问过的链接*/
+}
+
+.w_list:visited
+{
+	text-decoration:none; /*指已经访问过的链接*/
+	color: black;
+}
+
+.w_list:hover
+{
+	text-decoration:none;/*指鼠标在链接*/
+	color: blue;
+}
+
+.w_list:active
+{
+	text-decoration:none;/* 指正在点的链接*/ 
+	color: red;
+}
+.work_tools {
+	padding: 1px;
+}
+.work_tools li {
+	float: left;
+	list-style-type: none;
+	margin-right: 20px;
+}

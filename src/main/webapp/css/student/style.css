@@ -1,0 +1,82 @@
+/*
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+*/
+h4, h5, h6,
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+ul, ol {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+html, body {
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+}
+
+th {
+    text-align: center;
+}
+
+/*--- Header Part Starts Her ---*/
+.header {
+    background: url(../../image/banner.jpg) no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    min-height: 250px;
+    position: relative;
+}
+
+.header-profile {
+    position: absolute;
+    bottom: -26%;
+    left: 42%;
+}
+
+.header-top {
+    text-align: center;
+    margin-top: 8%;
+}
+
+.teachers {
+
+}
+
+.footer {
+    padding: 1em 0;
+    text-align: center;
+    background: #2b3b4b;
+    margin-top: 30px;
+}
+
+p.copyright {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;
+}
+
+p.copyright a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+p.copyright a:hover {
+    color: #fff;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+/*--- Media Queries Ends Here ---*/

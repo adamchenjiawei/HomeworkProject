@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homework.dao.ClassToTeachers_DAO">
+	<insert id="add_to">
+		insert into
+		class_to_teachers(teacher_id,class_id)
+		values(#{teacher_id},#{class_id})
+	</insert>
+
+	<update id="update">
+		update class_to_teachers set teacher_id =
+		#{teacher_id},class_id =
+		#{class_id} where id = #{id}
+	</update>
+
+	<delete id="delete">
+		delete from class_to_teachers where teacher_id =
+		#{teacher_id} and class_id = #{class_id}
+	</delete>
+
+	<select id="query_to_class" resultType="String">
+		select class_id from
+		the_class where teacher_id = #{teacher_id}
+	</select>
+
+	<select id="query_to_teacher" resultType="String">
+		select teacher_id from
+		the_class where class_id = #{class_id}
+	</select>
+</mapper>

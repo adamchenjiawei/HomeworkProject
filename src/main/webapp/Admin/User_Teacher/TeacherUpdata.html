@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../../css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="../../css/bootstrap.css.map" rel="stylesheet"
+	type="text/css">
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<link href="../../css/admin/register.css" rel="stylesheet"
+	type="text/css">
+
+<script type="text/javascript" src="../../javascript/jquery.min.js"></script>
+<script type="text/javascript" src="../../javascript/jquery.validate.js"></script>
+<script type="text/javascript" src="../../javascript/jquery.metadata.js"></script>
+<title>修改教师信息</title>
+</head>
+<body>
+	<br>
+	<br>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<h2 class="text-center">修改教师信息</h2>
+
+				<form method="post"
+					action="/ElectronicHomeworkSubmissionSystem/Get_Teacher_Updata"
+					class="zcform">
+					<table>
+						<tbody>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">姓名：</label> <input id="name" name="name"
+											class="required" placeholder="请输入姓名" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">性别：</label> <input id="sex" name="sex"
+											class="required" value placeholder="请输入性别" />
+
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">年龄：</label> <input id="age" name="age"
+											type="text" class="required" value placeholder="请输入年龄" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">手机号码：</label> <input id="phone"
+											name="phone" type="text" class="required" value
+											placeholder="请输入手机号码" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one" for="agent">QQ号：</label> <input id="qq"
+											name="qq" type="text" class="required" placeholder="请输入QQ号" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">邮箱：</label> <input id="e_mail"
+											name="e_mail" class="required" placeholder="请输入邮箱" />
+									</p>
+								</td>
+							</tr>
+
+							<tr style="text-align: center">
+								<td>
+									<p class="clearfix">
+										<label class="one">办公室：</label> <input id="office"
+											name="office" class="required" placeholder="请输入办公室" />
+									</p>
+								</td>
+								<td>
+									<p class="clearfix">
+										<label class="one">登录名：</label> <input id="login_user"
+											name="login_user" class="required" placeholder="请输入登录名" />
+									</p>
+								</td>
+							</tr>
+							<tr style="text-align: center">
+
+								<td>
+									<p class="clearfix">
+										<label class="one">登录密码：</label> <input id="hashed_password"
+											name="hashpassword" class="required" value
+											placeholder="请输入登录密码" />
+									</p>
+								</td>
+								<input id="id" name="id" type="text" style="display: none;" />
+							</tr>
+						</tbody>
+					</table>
+					<BR>
+					<p>
+						<input class="submit" type="submit" value="修改教师信息" />
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"
+		src="../../javascript/admin/teacher/updata.js"></script>
+</body>
+</html>
